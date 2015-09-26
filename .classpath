@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/pablo/Google Drive/2_DAM_2015-2016/acceso a datos/actividad 1/1a_1b/1a_1b/GestionFicherosBase.jar"/>
-	<classpathentry kind="lib" path="C:/Users/pablo/Google Drive/2_DAM_2015-2016/acceso a datos/actividad 1/1a_1b/1a_1b/GestionFicherosIGU.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
