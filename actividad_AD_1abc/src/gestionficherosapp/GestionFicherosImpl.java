@@ -1,4 +1,4 @@
-package gestionficherosapp;
+package src.gestionficherosapp;
 
 import java.io.File;
 import java.io.IOException;

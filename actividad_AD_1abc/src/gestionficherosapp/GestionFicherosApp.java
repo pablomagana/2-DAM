@@ -1,4 +1,4 @@
-package gestionficherosapp;
+package src.gestionficherosapp;
 
 import gestionficheros.MainGUI;
 
