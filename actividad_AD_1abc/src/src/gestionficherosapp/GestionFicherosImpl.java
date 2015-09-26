@@ -22,7 +22,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 
 	public GestionFicherosImpl() {
 		carpetaDeTrabajo = File.listRoots()[0];
-		//inicio directamente en el escritorio solo en windows
+		//inicio directamente en el escritorio solo en windows,en mac no
 		//carpetaDeTrabajo = new File("C:\\Users\\pablo\\Desktop");
 		actualiza();
 	}
