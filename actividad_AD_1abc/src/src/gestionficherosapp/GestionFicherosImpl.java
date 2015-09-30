@@ -223,7 +223,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 		strBuilder.append("\n");
 		
 		//Tipo: fichero o directorio
-		try{
+		
 			if(file.isFile()){
 				strBuilder.append("Tipo: ");
 				strBuilder.append("Fichero");
@@ -232,88 +232,67 @@ public class GestionFicherosImpl implements GestionFicheros {
 				strBuilder.append("Tipo: ");
 				strBuilder.append("Directorio");
 			}
-		}
-		catch (SecurityException e) {
-			throw new GestionFicherosException("Error al detectar tipo de archivo");
-		}
+		
 		
 		strBuilder.append("\n");
 		
 		//tamaño bytes
-		try{
-			strBuilder.append("Tamaño : ");
-			strBuilder.append(file.length()+" bytes");
-			
-		}catch(SecurityException e){
-			throw new GestionFicherosException("Error obtener tamaño del archivo");
-		}
+		
+		strBuilder.append("Tamaño : ");
+		strBuilder.append(file.length()+" bytes");
+		
 		strBuilder.append("\n");
 		
 		//Ubicación
-		try{
+		
 			strBuilder.append("Ubicación : ");
 			strBuilder.append(file.getAbsolutePath());
 			
-		}catch(SecurityException e){
-			throw new GestionFicherosException("Error obtener ubicación del archivo");
-		}
+		
 		strBuilder.append("\n");
 		
 		//Fecha de última modificación
-		try{
+		
 			strBuilder.append("Ultima modificaión : ");
 			//obtengo fecha y cambio formato de presentacion
 			SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 			strBuilder.append(formatoFecha.format(file.lastModified()));
-		}catch(SecurityException e){
-			throw new GestionFicherosException("Error obtener ultima modificacion");
-		}
-		strBuilder.append("\n");
+			strBuilder.append("\n");
 		
 		//Si es un fichero oculto o no
-		try{
+		
 			strBuilder.append("Oculto :");
 			if(file.isHidden()){
 				strBuilder.append(" Si");
 			}else{
 				strBuilder.append(" No");
 			}
-		}catch(SecurityException e){
-			throw new GestionFicherosException("Error obtener visibilidad");
-		}
+		
 		strBuilder.append("\n");
 		
 		//Si es directorio: Espacio libre, espacio disponible, espacio total
 		if(file.isDirectory()){
-			try{
+			
 				strBuilder.append("Nº elementos : ");
 				String[] arregloArchivos = file.list();
 				int numArchivos = arregloArchivos.length;
 				strBuilder.append(""+numArchivos);
 				strBuilder.append("\n");
-			}catch(Exception e){
-				throw new GestionFicherosException("Error obtener total de elementos");
-			}
-			try{
+			
+			
 				strBuilder.append("Espacio libre : ");
 				strBuilder.append(file.getFreeSpace()+" bytes");
-			}catch(SecurityException e){
-				throw new GestionFicherosException("error obtener espacio libre");
-			}
+			
 			strBuilder.append("\n");
-			try{
+			
 				strBuilder.append("Espacio disponible : ");
 				strBuilder.append(file.getUsableSpace()+" bytes");
-			}catch(SecurityException e){
-				throw new GestionFicherosException("error obtener espacio disponible");
-			}
+			
 			strBuilder.append("\n");
-			try{
+			
 				strBuilder.append("Espacio total : ");
 				strBuilder.append(file.getTotalSpace()+" bytes");
-			}catch(SecurityException e){
-				throw new GestionFicherosException("error obtener espacio total");
-			}
+			
 		}
 		
 		return strBuilder.toString();
