@@ -1,7 +1,8 @@
-package src.ficheros;
+package ficheros;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -42,6 +43,12 @@ public class Comparar {
 		br2.close();
 		return true;
 		
+	}
+	
+	public int buscarPalabra (File fichero1, String palabra, boolean primera) throws FileNotFoundException{
+		BufferedReader br1=new BufferedReader(new FileReader(fichero1));
+		
+		return 1;
 	}
 
 }
