@@ -30,7 +30,7 @@ public class OrdenarDatos {
 		
 		BufferedReader br=new BufferedReader(new FileReader(file1));
 		String palabraleida=br.readLine();
-		//una linea m√°s
+		//una linea m·s
 	}
 
 }
