@@ -23,6 +23,7 @@ public class OrdenarDatos {
 		}catch(IOException e){
 			System.out.println("error al ordenar el archivo!");
 		}
+		
 	}
 	
 	public static void ordenar(File file1,File file2,int tipo_orden) throws IOException {
