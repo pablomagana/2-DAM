@@ -45,9 +45,9 @@ public class Comparar {
 		
 	}
 	
-	public int buscarPalabra (File fichero1, String palabra, boolean primera) throws FileNotFoundException{
+	public int buscarPalabra (File fichero1, String palabra, boolean primera) throws IOException{
 		BufferedReader br1=new BufferedReader(new FileReader(fichero1));
-		
+		br1.readLine();
 		return 1;
 	}
 
