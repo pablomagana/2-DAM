@@ -1,4 +1,4 @@
-package ordenar;
+package src.ordenar;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,7 +30,7 @@ public class OrdenarDatos {
 		
 		BufferedReader br=new BufferedReader(new FileReader(file1));
 		String palabraleida=br.readLine();
-		
+		//una linea más
 	}
 
 }
