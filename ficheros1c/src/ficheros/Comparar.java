@@ -21,6 +21,13 @@ public class Comparar {
 		}catch(Exception e){
 			System.out.println("error al comparar los archivos");
 		}
+		
+		File file3=new File("t3.txt");
+		try{
+			System.out.println("la palabra se encuentra en la linea "+buscarPalabra(file3, "casa", false));
+		}catch(Exception e){
+			System.out.println("no se ha podido buscar la palabra");
+		}
 
 	}
 	
@@ -45,13 +52,26 @@ public class Comparar {
 		
 	}
 	
-	public int buscarPalabra (File fichero1, String palabra, boolean primera) throws IOException{
+	public static int buscarPalabra (File fichero1, String palabra, boolean primera) throws IOException{
 		BufferedReader br1=new BufferedReader(new FileReader(fichero1));
 		String s=br1.readLine();
+		int linea=1;
+		int lineaEncontrada=0;
+		
 		while(s!=null){
-			
+			if(primera==true && s.equals(palabra)){
+				lineaEncontrada=linea;
+				break;
+			}else{
+				if(s.equals(palabra)){
+					lineaEncontrada=linea;
+				}
+			}
+			linea++;
+			s=br1.readLine();
 		}
-		return 1;
+		br1.close();
+		return lineaEncontrada;
 	}
 
 }
