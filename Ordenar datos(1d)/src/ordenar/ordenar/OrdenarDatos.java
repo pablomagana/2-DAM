@@ -31,8 +31,9 @@ public class OrdenarDatos {
 		
 		BufferedReader br=new BufferedReader(new FileReader(file1));
 		String palabraleida=br.readLine();
-		while(palabraleida!=null){
 		
+		while(palabraleida!=null){
+			
 		}
 	}
 
