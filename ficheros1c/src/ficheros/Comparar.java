@@ -9,6 +9,9 @@ import java.io.IOException;
 public class Comparar {
 
 	public static void main(String[] args) {
+		
+		//Pablo Magaña
+		
 		File file1=new File("t1.txt");
 		File file2=new File("t2.txt");
 		//comprobar si los archivos son o no iguales y mostrar error si se produce cualquier error
