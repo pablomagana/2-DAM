@@ -18,9 +18,6 @@ public class OrdenarDatos {
 		System.out.println("para esta actividad se presupone que solo hay una palabra por linea");
 		Scanner s=new Scanner(System.in);
 		
-		//String namefile1="t1.txt";
-		//String namefile2="t2.txt";
-		
 		System.out.println("nombre del primer archivo : ");
 		String namefile1=s.nextLine();
 		File file1=new File(namefile1);
