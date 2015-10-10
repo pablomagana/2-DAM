@@ -60,15 +60,18 @@ public class OrdenarDatos {
 		palabrasEnOrdenArray=new String[palabrasEnDesOrden.size()];
 		palabrasEnDesOrdenArray=new String[palabrasEnDesOrden.size()];
 		
-		//ordenar palabras
+		//ordenar palabras segun el orden indicado
 		if(tipo_orden==0){
+			//ordenar naturalmente
 			Collections.sort(palabrasEnDesOrden);
 			palabrasEnOrden=palabrasEnDesOrden;
 			palabrasEnOrdenArray=(String[]) palabrasEnOrden.toArray(palabrasEnOrdenArray);
 		}else{
+			//ordenar naturalmente
 			Collections.sort(palabrasEnDesOrden);
 			palabrasEnDesOrdenArray=(String[]) palabrasEnDesOrden.toArray(palabrasEnDesOrdenArray);
 			String prov;
+			//invertir orden
 			int num;
 			for(int i=0;i<=palabrasEnDesOrdenArray.length-1;i++){
 				num=(palabrasEnDesOrdenArray.length-1)-i;
@@ -87,6 +90,7 @@ public class OrdenarDatos {
 			}
 			
 		}
+		//cerrar flujo de datos
 		br.close();
 		br2.close();
 	}
