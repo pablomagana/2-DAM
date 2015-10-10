@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class OrdenarDatos {
 
 	public static void main(String[] args) {
+		//pablo Magaña
 		System.out.println("para esta actividad se presupone que solo hay una palabra por linea");
 		Scanner s=new Scanner(System.in);
 		
