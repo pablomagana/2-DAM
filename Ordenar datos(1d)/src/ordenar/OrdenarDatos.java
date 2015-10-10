@@ -75,9 +75,7 @@ public class OrdenarDatos {
 			int num;
 			for(int i=0;i<=palabrasEnDesOrdenArray.length-1;i++){
 				num=(palabrasEnDesOrdenArray.length-1)-i;
-				int ii=0;
 				prov=palabrasEnDesOrdenArray[num];
-				ii=0;
 				palabrasEnOrdenArray[i]=prov;
 			}
 		}
