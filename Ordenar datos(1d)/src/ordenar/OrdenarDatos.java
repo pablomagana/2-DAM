@@ -31,6 +31,7 @@ public class OrdenarDatos {
 		
 		try{
 			ordenarFichero(file1,file2,i);
+			System.out.println("Archivo ordenado con exito!");
 		}catch(IOException e){
 			System.out.println("error al ordenar el archivo!");
 		}
