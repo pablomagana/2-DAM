@@ -13,12 +13,17 @@ public class StreamBytes {
 	static FileOutputStream os;
 	
 	public static void main(String[] args) {
+		
+		//Pablo MagaÃ±a
+		
+		//se le pide al usuario un archivo de entrada y otro de salida para copiar la imagen
 		Scanner s=new Scanner(System.in);
 		System.out.println("nombre del fichero origen :");
 		String origen=s.nextLine();
 		System.out.println("nombre del fichero destino :");
 		String destino=s.nextLine();
 		
+		//intentar abrir/crear el archivo de origen y destino
 		try {
 			// 0 para abrir origen
 			// 1 para abrir destino
@@ -27,7 +32,7 @@ public class StreamBytes {
 		} catch (FileNotFoundException | SecurityException e1) {
 			System.out.println("error al abrir los ficheros");
 		}
-		
+		//abiertos los archivos, se recorre copia el cintenido
 		try{
 			copiaBytes(is,os);
 			System.out.println("listo!!");
@@ -36,8 +41,9 @@ public class StreamBytes {
 		}
 	}
 	
-	/*Definir el perfil que se desee para esta función*/
+	/*Definir el perfil que se desee para esta funciï¿½n*/
 	public static void copiaBytes(FileInputStream is,FileOutputStream os) throws IOException {
+		//se copia el contenido recorriendo el archivo origen y escribiendo el el destino byte a byte hasta el fin del archivo origen
 		int byteLlegit = is.read();
 		while(byteLlegit!=-1){
 			os.write(byteLlegit);
@@ -45,8 +51,9 @@ public class StreamBytes {
 		}
 	}
 	
-	/*Definir el perfil que se desee para esta función*/
+	/*Definir el perfil que se desee para esta funciï¿½n*/
 	public static  Closeable abrirFichero(String name,int type) throws FileNotFoundException, SecurityException {
+		//segun el tipo especificado se crea un tipo de archivo segun sea de entrada o de salida
 		if(type==0){
 			FileInputStream fileStream=new FileInputStream(new File(name));
 			return 	fileStream;
