@@ -1,0 +1,6 @@
+caballo
+burro
+diestro
+zurdo
+abeja
+helio
