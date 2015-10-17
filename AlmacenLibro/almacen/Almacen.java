@@ -46,7 +46,7 @@ public class Almacen {
 	private void guardarListaLibros() throws IOException{
 		File listaLibros=new File("listalibros.txt");
 		BufferedWriter bufferedfile=new BufferedWriter(new FileWriter(listaLibros));
-		//por aqui
+		//por aqui iii
 	}
 	private void modificarTitulo(String fileLibro,String newTitulo){
 		Libro libroAModificar=recuperarLibro(fileLibro);
