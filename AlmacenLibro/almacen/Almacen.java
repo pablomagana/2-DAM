@@ -86,16 +86,26 @@ public class Almacen {
 
 	
 	public void modificarTitulo(String fileLibro,String newTitulo) throws FileNotFoundException, ClassNotFoundException, IOException{
-		Libro libroAModificar=recuperarLibro(fileLibro);
-		
-		String tituloOriginal=fileLibro;
+		Libro libroAModificar=null;
+		try{
+			libroAModificar=recuperarLibro(fileLibro);
+		}catch(Exception e){
+			System.out.println("imposible recuparar el libro que quieres modificar");
+		}
 		libroAModificar.setTitulo(newTitulo);
-		guardarLibro(libroAModificar,tituloOriginal);
+		out=new ObjectOutputStream(new FileOutputStream(fileLibro));
+		out.writeObject(fileLibro);
 		System.out.println("Titulo modificado  con exito");
 	}
 	public void modificarAutor(String fileLibro,String newAutor) throws FileNotFoundException, ClassNotFoundException, IOException{
-		Libro libroAModificar=recuperarLibro(fileLibro);
+		Libro libroAModificar=null;
+		try{
+			libroAModificar=recuperarLibro(fileLibro);
+		}catch(Exception e){
+			System.out.println("imposible recuparar el libro que quieres modificar");
+		}
 		
+		new File(fileLibro).delete();
 		String tituloOriginal=fileLibro;
 		libroAModificar.setAutor(newAutor);
 		guardarLibro(libroAModificar,tituloOriginal);

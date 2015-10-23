@@ -49,12 +49,14 @@ public class Main {
 		}
 		
 //modificar Autor
+		/*
 		almacen.guardarLibro(libro3,libro3.getTitulo());
 		try{
 			almacen.modificarAutor(libro3.getTitulo(), "Autor cambiado de nombre");
 		}catch(Exception e){
 			System.out.println("error al recuperar el libro a modificar, comprueba que esta guardado");
 		}
+		*/
 	}
 	
 }
