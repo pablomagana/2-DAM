@@ -83,6 +83,7 @@ public class Almacen {
 		}
 		System.out.println("La lista de libros se ha guardado con exito");
 	}
+
 	
 	public void modificarTitulo(String fileLibro,String newTitulo) throws FileNotFoundException, ClassNotFoundException, IOException{
 		Libro libroAModificar=recuperarLibro(fileLibro);
