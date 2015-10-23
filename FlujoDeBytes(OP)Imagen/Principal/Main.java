@@ -20,9 +20,9 @@ public class Main {
 	 */
 	static BufferedImage bufferedorigen=null;
 	static BufferedImage buffereddestino=null;
-	static File destino;
-	static File origen;
-	static String menu;
+	static File destino=null;
+	static File origen=null;
+	static String menu=null;
 	
 	public static void main(String[] args) {
 		
@@ -38,7 +38,9 @@ public class Main {
 		System.out.println("2 - para hacer su espejo");
 		menu=s.nextLine();
 		try {
+			//abrir imagen para leer
 			bufferedorigen=ImageIO.read(origen);
+			//crear objeto de imagen en blanco identico a imagen ooriginal para dibujar
 			buffereddestino=new BufferedImage(bufferedorigen.getWidth(), bufferedorigen.getHeight(), bufferedorigen.getType());
 			
 		} catch (IOException e) {
@@ -59,17 +61,17 @@ public class Main {
 	
 	
 	public static void rotar() throws IOException{
-		
-		
+		//capturo valores de la imagen
 		int ancho = bufferedorigen.getWidth();//512
 		int alto = bufferedorigen.getHeight();//512
 		
 		int rgbo;//origen
 		int rgbo2;
+		//recorro la imagen cambiando el pixel de origen por el de destino
+		//siguiendo el modelo de rotar la diagonal y hacer el espejo
 		for(int i=0;i<ancho;i++){
 			for(int j=0;j<alto;j++){
 				rgbo=bufferedorigen.getRGB(i, j);
-				
 				rgbo2=bufferedorigen.getRGB(j, (ancho-1)-i);
 			
 				buffereddestino.setRGB((ancho-1)-j,i , rgbo);
@@ -78,14 +80,16 @@ public class Main {
 			
 		}
 		System.out.println("imagen rotada 90º a la derecha");
-		ImageIO.write(buffereddestino, "png", destino);
+		ImageIO.write(buffereddestino, "jpg", destino);
 	}
 	
 	public static void espill() throws IOException{
+		//capturo medidas de la imagen
 		int ancho = bufferedorigen.getWidth();
 		int alto = bufferedorigen.getHeight();
 		
 		int rgbo;//origen
+		//recorro la imagen de derecha a izquierda intercambiando los pixeles espejos
 		for(int i=0;i<ancho;i++){
 			for(int j=0;j<alto;j++){
 				rgbo=bufferedorigen.getRGB(i, j);

@@ -3,25 +3,24 @@ package almacen;
 import java.io.Serializable;
 
 public class Libro implements Serializable {
-	String id;
 	String titulo;
 	String autor;
-	String publicacion;
+	int publicacion;
 	String editor;
-	String npaginas;
+	int npaginas;
 	
-	public Libro(String id,String titulo,String autor,String publicacion,String editor,String npaginas){
-		
+	public Libro(String titulo, String autor, int publicacion, String editor,int npaginas) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.publicacion = publicacion;
+		this.editor = editor;
+		this.npaginas = npaginas;
 	}
+
 	public Libro(){
 		
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -34,10 +33,10 @@ public class Libro implements Serializable {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getPublicacion() {
+	public int getPublicacion() {
 		return publicacion;
 	}
-	public void setPublicacion(String publicacion) {
+	public void setPublicacion(int publicacion) {
 		this.publicacion = publicacion;
 	}
 	public String getEditor() {
@@ -46,10 +45,10 @@ public class Libro implements Serializable {
 	public void setEditor(String editor) {
 		this.editor = editor;
 	}
-	public String getNpaginas() {
+	public int getNpaginas() {
 		return npaginas;
 	}
-	public void setNpaginas(String npaginas) {
+	public void setNpaginas(int npaginas) {
 		this.npaginas = npaginas;
 	}
 	
