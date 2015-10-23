@@ -104,11 +104,9 @@ public class Almacen {
 		}catch(Exception e){
 			System.out.println("imposible recuparar el libro que quieres modificar");
 		}
-		
-		new File(fileLibro).delete();
-		String tituloOriginal=fileLibro;
 		libroAModificar.setAutor(newAutor);
-		guardarLibro(libroAModificar,tituloOriginal);
+		out=new ObjectOutputStream(new FileOutputStream(fileLibro));
+		out.writeObject(fileLibro);
 		System.out.println("Autor modificado con exito");
 	}
 	
