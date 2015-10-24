@@ -63,7 +63,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 
 	}
 ////////////////////////////////
-//Pablo MagaÃ±a
+//Pablo Magaña
 ////////////////////////////////
 //	actividad 1b
 ////////////////////////////
@@ -214,7 +214,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 			throw new GestionFicherosException("El archio no tiene permisos de lectura");
 		}
 		//TÃ­tulo
-		strBuilder.append("INFORMACIÃ“N DEL SISTEMA");
+		strBuilder.append("INFORMACIÓN DEL SISTEMA");
 		strBuilder.append("\n\n");
 		
 		//Nombre
@@ -238,14 +238,14 @@ public class GestionFicherosImpl implements GestionFicheros {
 		
 		//tamaÃ±o bytes
 		
-		strBuilder.append("TamaÃ±o : ");
+		strBuilder.append("Tamaó : ");
 		strBuilder.append(file.length()+" bytes");
 		
 		strBuilder.append("\n");
 		
 		//UbicaciÃ³n
 		
-			strBuilder.append("UbicaciÃ³n : ");
+			strBuilder.append("Ubicación : ");
 			strBuilder.append(file.getAbsolutePath());
 			
 		
@@ -253,7 +253,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 		
 		//Fecha de Ãºltima modificaciÃ³n
 		
-			strBuilder.append("Ultima modificaiÃ³n : ");
+			strBuilder.append("Ultima modificaión : ");
 			//obtengo fecha y cambio formato de presentacion
 			SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 			strBuilder.append(formatoFecha.format(file.lastModified()));
@@ -273,7 +273,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 		//Si es directorio: Espacio libre, espacio disponible, espacio total
 		if(file.isDirectory()){
 			
-				strBuilder.append("NÂº elementos : ");
+				strBuilder.append("Nº elementos : ");
 				String[] arregloArchivos = file.list();
 				int numArchivos = arregloArchivos.length;
 				strBuilder.append(""+numArchivos);
