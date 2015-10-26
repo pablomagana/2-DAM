@@ -3,6 +3,7 @@ package almacen;
 import java.io.Serializable;
 
 public class Libro implements Serializable {
+	/*Pablo Magaña*/
 	String titulo;
 	String autor;
 	int publicacion;
