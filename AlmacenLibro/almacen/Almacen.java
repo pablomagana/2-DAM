@@ -104,6 +104,7 @@ public class Almacen {
 		out.writeObject(fileLibro);
 		System.out.println("El libro '"+fileLibro+"' ha cambiado el titulo a '"+newTitulo+"'  con exito");
 	}
+	
 	public void modificarAutor(String fileLibro,String newAutor) throws FileNotFoundException, ClassNotFoundException, IOException{
 		Libro libroAModificar=null;
 		try{

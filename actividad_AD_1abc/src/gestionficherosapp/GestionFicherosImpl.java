@@ -23,7 +23,7 @@ public class GestionFicherosImpl implements GestionFicheros {
 	public GestionFicherosImpl() {
 		carpetaDeTrabajo = File.listRoots()[0];
 		//inicio directamente en el escritorio solo en windows,en mac no
-		//carpetaDeTrabajo = new File("C:\\Users\\pablo\\Desktop");
+		carpetaDeTrabajo = new File("C:\\Users\\pablo\\Desktop");
 		actualiza();
 	}
 
@@ -98,6 +98,9 @@ public class GestionFicherosImpl implements GestionFicheros {
 	public void creaFichero(String arg0) throws GestionFicherosException {
 		//intento crear fichero vacio o lanzo excepción
 		File file=new File(carpetaDeTrabajo,arg0);
+
+		
+		
 		try {
 			file.createNewFile();
 		} catch (IOException e) {
