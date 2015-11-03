@@ -22,6 +22,7 @@ public class Parseador {
 	}
 	
 	public void parsearFicheroXml(String fichero){
+		//obtener instancia del Document Builder Factory
 		DocumentBuilderFactory dbf= DocumentBuilderFactory.newInstance();
 		DocumentBuilder db;	
 		try {
@@ -35,7 +36,7 @@ public class Parseador {
 	}
 	
 	
-	public void parsearBiblioteca(){
+	public void parsearBiblioteca(){//metodo que me permite recorrer el fichero y crearme un objeto libro por cada nodo libro
 		// elemento raiz
 		Element elementoraiz=dom.getDocumentElement();
 		
@@ -63,6 +64,7 @@ public class Parseador {
 		int intpaginas= Integer.parseInt(getValor(elementoLibro,"paginas"));
 				
 		String stringAutor=getMultiValor(elementoLibro,"autor","nombre");
+		//crear onjeto libro y devolver el objeto
 		Libro libro=new Libro(stringTitlo,stringAutor,intPublicacion,stringEditor,intpaginas);
 		return libro;
 	}
@@ -77,14 +79,15 @@ public class Parseador {
 	
 	//libro element
 	public String getMultiValor(Element e,String name,String subName){
+		//obtener el valor de varios nodos hijo de un nodo autor
 		String nombreCompleto="";
 		NodeList listaelements = e.getElementsByTagName(name);
 		//obtengo unico nodo de la lista
 		Element elemento=(Element) listaelements.item(0);
 			
-			NodeList listaelements2 = elemento.getElementsByTagName(subName);		
+			NodeList listaelements2 = elemento.getElementsByTagName(subName);//obtengo nodos del elemento anterior		
 								
-			for(int j=0;j<listaelements2.getLength();j++){
+			for(int j=0;j<listaelements2.getLength();j++){//recorro los nodos de la lista
 				Element elemento2=(Element) listaelements2.item(j);
 				String s = elemento2.getTextContent();
 				if (j==0) {
@@ -94,22 +97,20 @@ public class Parseador {
 				}
 			}
 
-		
-		
-		
-		return nombreCompleto;
+		return nombreCompleto;//devuelvo el autor extraido
 	}
 	
 	
 	public String getAtrivute(Element elemento, String name){
+		//a partil de un elemento nodo y su nombre, extraigo el contenido
 		NodeList nle=elemento.getElementsByTagName(name);
 		NamedNodeMap lae = nle.item(0).getAttributes();
 		String publicacion=lae.item(0).getTextContent();
-		return publicacion;
+		return publicacion;//devuelvo valor del nodo
 	}
 	
 	public void print(){
-
+		//imprimo obtejos del archivo xml parseado
 		Iterator iterador = libros.iterator();
 		while(iterador.hasNext()) {
 			Libro l=(Libro) iterador.next();
