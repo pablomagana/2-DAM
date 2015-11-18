@@ -31,14 +31,16 @@ public class Datos {
 		cargarControlador();
 		try {
 			conexion=DriverManager.getConnection(url,user,pw);
-			System.out.println("conecion realizada con exito");
+			//System.out.println("conecion realizada con exito");
 		} catch (SQLException e) {
+			System.out.println("error al realizar la conexion");
 			e.printStackTrace();
 		}
 		
 		try {
 			statement=(Statement) conexion.createStatement();
 		} catch (SQLException e) {
+			System.out.println("error al crear el statement");
 			e.printStackTrace();
 		}
 	}
@@ -51,7 +53,7 @@ public class Datos {
 	
 	public void cargarControlador(){
 		try{
-			//cargar el driver de conexion con la base de datos durante la ejecuciÃ³n
+			//cargar el driver de conexion con la base de datos durante la ejecución
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
 			System.out.println("Error al cargar el controlador");
@@ -93,10 +95,10 @@ public class Datos {
 	public void introducirDatos(String[] arg){
 		//crear la conexion con la base de datos mediante el driveManager
 		try{
-			System.out.println(statement);
+			
 			//statement.execute("insert into atc (asignatura,nombre,inicio,fin,entregada) values('asignatura','nombre','1111-11-01','1555-09-02',false);");
 			statement.execute("insert into atc(asignatura,nombre,inicio,fin,entregada) values('"+arg[0]+"','"+arg[1]+"','"+arg[2]+"','"+arg[3]+"',"+arg[4]+");");
-			System.out.println("inserciÃ³n de dase de datos realizada con exito");
+			System.out.println("inserción de dase de datos realizada con exito");
 		}catch(SQLException e){
 			
 		}finally {
@@ -108,9 +110,6 @@ public class Datos {
 		ArrayList<String> arrayListResultados=new ArrayList<String>();
 		//crear la conexion con la base de datos mediante el driveManager
 		try{
-			conexion=DriverManager.getConnection(url,user,pw);
-			System.out.println("conecion realizada con exito");
-			statement=(Statement) conexion.createStatement();
 			resultados=statement.executeQuery("select * from atc");
 			//iterar resultados
 			System.out.println("asignatura"+"\t"+"nombre"+"\t"+"inicio"+"\t\t"+"fin"+"\t\t"+"entregada");
