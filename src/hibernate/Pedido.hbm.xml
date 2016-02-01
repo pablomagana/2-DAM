@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-ene-2016 6:25:34 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Pedido" table="PEDIDO">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="fecha" type="java.util.Date">
+            <column name="FECHA" />
+        </property>
+        <many-to-one name="empresa" class="hibernate.Empresa" not-null="true">
+        <!-- la propiedad not-null = true indica que un pedido siempre tiene que estar asociado con una empresa -->
+            <column name="CIF" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

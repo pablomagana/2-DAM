@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-ene-2016 6:25:34 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hibernate.Direccion" table="DIRECCION">
+        <id name="calle" type="java.lang.String">
+            <column name="CALLE" />
+            <generator class="assigned" />
+        </id>
+        <property name="poblacion" type="java.lang.String">
+            <column name="POBLACION" />
+        </property>
+        <property name="cp" type="int">
+            <column name="CP" />
+        </property>
+        <one-to-one name="empresa" class="hibernate.Empresa" property-ref="direccion" ></one-to-one>
+        <!-- property-ref hace referencia a una propiedad de la clase empresa -->
+    </class>
+</hibernate-mapping>
